@@ -1,0 +1,9 @@
+.page_header {
+	width: 640px;
+	text-align: right;
+}
+
+.errorMessage {
+	text-align: left;
+	color: red;
+}

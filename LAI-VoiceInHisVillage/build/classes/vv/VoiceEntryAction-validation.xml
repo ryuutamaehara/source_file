@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.2//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+	<field name="subject">
+		<field-validator type="requiredstring">
+			<message>お題は必須です。</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">10</param>
+			<message>お題は${maxLength}文字以内で入力してください。</message>
+		</field-validator>
+	</field>
+	<field name="voice_body">
+		<field-validator type="requiredstring">
+			<message>本文は必須です。</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">1000</param>
+			<message>本文は${maxLength}文字以内で入力してください。</message>
+		</field-validator>
+	</field>
+</validators>

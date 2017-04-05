@@ -1,0 +1,19 @@
+インデクス項目に767bytesを超える項目を使用したいので、DBの設定を変更する。
+以下の行をmy.iniファイルの[mysqld]セクションの末尾に追記。
+
+innodb_file_format=BARRACUDA
+innodb_file_per_table=ON
+innodb_large_prefix=ON
+
+設定変更後に、mysqldを再起動し、コマンドラインツールで以下のSQLを実行し
+変更が反映されていることを確認する。
+以下のように表示されればＯＫ。
+
+mysql> select @@global.innodb_file_format,@@global.innodb_large_prefix,@@global.innodb_file_per_table;
++-----------------------------+------------------------------+--------------------------------+
+| @@global.innodb_file_format | @@global.innodb_large_prefix | @@global.innodb_file_per_table |
++-----------------------------+------------------------------+--------------------------------+
+| Barracuda                   |                            1 |                              1 |
++-----------------------------+------------------------------+--------------------------------+
+1 row in set (0.00 sec)
+

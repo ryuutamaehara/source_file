@@ -1,0 +1,20 @@
+--
+-- ポイント付与機能追加のための移行用SQL
+--
+
+-- 受注明細への項目追加
+ALTER TABLE t_odr_detail ADD points_to_gain NUMERIC(10) NOT NULL;
+
+-- 受注伝票への項目追加
+ALTER TABLE t_odr_header ADD total_points_to_gain NUMERIC(10) NOT NULL;
+
+-- 過去の受注に対してもポイントを付与する（ポイント付与率は2%、端数は切り捨て）
+UPDATE t_odr_detail SET points_to_gain = FLOOR(total_price * 0.02);
+UPDATE t_odr_header
+  SET total_points_to_gain = (
+    SELECT SUM(points_to_gain) FROM t_odr_detail
+    WHERE t_odr_detail.odr_id = t_odr_header.odr_id);
+
+-- データ移行結果を確認
+SELECT odr_id,total_price,points_to_gain FROM t_odr_detail;
+SELECT odr_id, product_total_price, total_points_to_gain FROM t_odr_header;

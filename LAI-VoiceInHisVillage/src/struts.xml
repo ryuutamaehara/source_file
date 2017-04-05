@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+
+	<package name="mypackage" extends="struts-default">
+		<interceptors>
+			<interceptor name="loginRequired" class="vv.LoginInterceptor"/>
+			<interceptor-stack name="vvLoginStack">
+				<interceptor-ref name="loginRequired"/>
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="vvLoginStack"/>
+		<global-results>
+			<result name="login_required" type="redirect">login</result>
+		</global-results>
+
+ 		<action name="login" class="vv.LoginAction" method="display">
+			<result>/login.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		<action name="login_auth" class="vv.LoginAction" method="execute">
+			<result name="success" type="redirect">my_voicelist</result>
+			<result name="superuser" type="redirect">voicelist</result>
+			<result name="error">error.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+
+ 		<action name="logout" class="vv.LogoutAction" method="execute">
+			<result name="success" type="redirect">login</result>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+
+		<action name="go_to_top" class="vv.GoToTopAction" method="execute">
+			<result name="success" type="redirect">my_voicelist</result>
+			<result name="superuser" type="redirect">voicelist</result>
+		</action>
+
+		<action name="password_change_display" class="fw.DummyAction" method="execute">
+			<result>/password.jsp</result>
+		</action>
+
+		<action name="password_change" class="vv.PasswordChangeAction" method="execute">
+			<result>/password.jsp</result>
+			<result name="input">/password.jsp</result>
+		</action>
+
+		<action name="voicelist" class="vv.VoiceListAction" method="display">
+			<result>/voice_list.jsp</result>
+		</action>
+		<action name="my_voicelist" class="vv.MyVoiceListAction" method="display">
+			<result>/my_voice_list.jsp</result>
+		</action>
+		<action name="voiceentry_display" class="fw.DummyAction" method="execute">
+			<result name="success">voice_entry.jsp</result>
+		</action>
+		<action name="voiceentry" class="vv.VoiceEntryAction" method="execute">
+			<result name="success" type="redirect">my_voicelist</result>
+			<result name="input">voice_entry.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+		<action name="voicedelete" class="vv.VoiceDeleteAction" method="execute">
+			<result name="success" type="redirect">my_voicelist</result>
+			<result name="error">error.jsp</result>
+		</action>
+	</package>
+
+</struts>

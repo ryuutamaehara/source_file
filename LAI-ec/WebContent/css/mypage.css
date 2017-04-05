@@ -1,0 +1,61 @@
+/*
+ マイページ用
+*/
+.mypage_header {
+	width: 100%;
+	margin: 4px;
+	border: 0;
+	border-bottom: 1px solid #e0e0e0;
+}
+.page_title {
+	padding: 8px;
+	font-size: 16px;
+	font-weight: bold;
+}
+.page_desc {
+	padding-top: 16px;
+	padding-bottom: 16px;
+	font-size: 14px;
+}
+
+.button_area {
+	margin-top: 12px;
+	width: 100%;
+	padding: 8px;
+	border-collapse: collapse;
+	border: 0px;
+}
+.button_area td {
+	text-align: center;
+}
+
+.mypage_body {
+	margin-top: 12px;
+	width: 640px;
+	padding: 8px;
+	border-collapse: collapse;
+}
+.mypage_body td {
+	padding: 16px;
+}
+.label_col {
+	width: 150px;
+	border: 1px solid #f0f0f0;
+	text-align: right;
+	vertical-align: top;
+}
+.input_col {
+	width: 480px;
+	border: 1px solid #f0f0f0;
+	text-align: left;
+	font-size: 13px;
+	line-height: 1.5;
+}
+.note {
+	margin-left: 12px;
+	font-size: 11px;
+	font-weight: normal;
+}
+input {
+	margin: 4px;
+}

@@ -1,0 +1,166 @@
+/*
+ 共通系CSS
+*/
+.num {
+	text-align: right;
+}
+body {
+	width: 100%;
+	background: #f0f0ff;
+}
+table {
+	border: 1px solid #eee;
+}
+td {
+	text-align: left;
+	vertical-align: top;
+}
+.shop_title {
+	text-align: left;
+}
+.breadcrumbs {
+	text-align: left;
+	font-size: 12px;
+}
+.entry_page_container {
+	width: 100%;
+}
+.entry_page_body {
+	width: 100%;
+	font-size: 20px;
+}
+.page_header {
+	width:100%;
+	margin-top: 4px;
+	margin-buttom: 4px;
+	border: 0;
+	border-bottom: 1px solid #e0e0e0;
+}
+.page_body {
+	margin-top: 12px;
+	width: 640px;
+	padding: 8px;
+	border-collapse: collapse;
+}
+
+.header_button_area {
+	width: 120px;
+	text-align: right;
+	padding-right: 8px;
+	font-size: 12px;
+	vertical-align: middle;
+}
+.page_title {
+	width:300px;
+	padding: 8px;
+	font-size: 16px;
+	font-weight: bold;
+}
+.page_desc {
+	padding-top: 16px;
+	padding-bottom: 16px;
+	font-size: 14px;
+}
+.area_title {
+	margin-bottom: 4px;
+	width: 100%;
+	font-size: 16px;
+	font-weight: bold;
+	background: #eeeeff;
+}
+.area_title:before {
+	content: "■";
+}
+.section_title {
+	width: 100%;
+	font-size: 14px;
+	font-weight: normal;
+	background: #eeeeff;
+}
+.section_title:before{
+	content: "□";
+}
+
+.col_left {
+	width: 140px;
+	background: #eee;
+}
+.col_right {
+	width: 660px;
+}
+
+.caution {
+	font-weight: bold;
+	color: red;
+}
+.caution:before {
+	content: "【注意】";
+}
+.note {
+	margin-left: 12px;
+	font-size: 11px;
+	font-weight: normal;
+}
+.price {
+	text-align: right;
+}
+.price:after {
+	content: " VM";
+}
+.radio_list {
+	list-style-type: none;
+}
+
+.condition_area {
+	margin-bottom: 16px;
+/*	width: 100%; */
+}
+.condition_area td {
+	border: 1px solid #d0d0d0;
+	vertical-align: middle;
+	padding: 4px 8px 4px 8px;
+}
+.cond_item_label_col {
+	width: 100px;
+	text-align: right;
+}
+.cond_item_col {
+	width: 380px;
+	background: #f7f7f7;
+}
+.search_button_col {
+	text-align: center;
+}
+.list_area {
+	border: 1px solid #808080;
+}
+.list_area td {
+	border: 1px solid #d0d0d0;
+	vertical-align: top;
+	padding: 4px 8px 4px 8px;
+}
+.list_header {
+	border-bottom: 1px solid #e0e0e0;
+	background: #fff0f0;
+}
+.list_row {
+	border-bottom: 1px solid #e0e0e0;
+}
+
+
+.label_col {
+	padding-top: 4px;
+	padding-bottom: 4px;
+	width: 150px;
+	border: 1px solid #f0f0f0;
+	text-align: right;
+	vertical-align: top;
+}
+.input_col {
+	padding: 4px;
+	width: 480px;
+	border: 1px solid #f0f0f0;
+	text-align: left;
+	font-size: 13px;
+	line-height: 1.5;
+}

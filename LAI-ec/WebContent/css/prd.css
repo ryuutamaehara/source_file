@@ -1,0 +1,33 @@
+/*
+  商品ページ用
+*/
+.prd_img_col {
+	width: 140px;
+	text-align: center;
+}
+.prd_img_col img {
+	width: 120px;
+	height: 120px;
+}
+.prd_name {
+	padding: 8px;
+	font-size: 16px;
+	font-weight: bold;
+}
+.prd_desc {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	height: 60px;
+	font-size: 12px;
+}
+.prd_price {
+	font-size: 12px;
+	font-weight: normal;
+	text-align: left;
+}
+.prd_price:before {
+	content: "価格 ";
+}
+.buy_button {
+	text-align: right;
+}

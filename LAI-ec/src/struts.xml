@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.action.extension" value="html,action,"/>
+
+
+	<package name="category" namespace="/cate/*" extends="struts-default">
+		<interceptors>
+			<interceptor name="DBConnectionCarer" class="fw.DBConnectionCarer"/>
+			<interceptor-stack name="CommonStack">
+				<interceptor-ref name="DBConnectionCarer"/>
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="CommonStack"/>
+
+		<action name="*" class="ec.SearchPageAction" method="execute">
+			<result>/prd_list.jsp</result>
+		</action>
+	</package>
+	<package name="product" namespace="/prd/*" extends="struts-default">
+		<interceptors>
+			<interceptor name="DBConnectionCarer" class="fw.DBConnectionCarer"/>
+			<interceptor-stack name="CommonStack">
+				<interceptor-ref name="DBConnectionCarer"/>
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="CommonStack"/>
+
+		<action name="*" class="ec.ProductPageAction" method="execute">
+			<result>/product.jsp</result>
+		</action>
+	</package>
+
+	<package name="top" extends="struts-default">
+		<interceptors>
+			<interceptor name="DBConnectionCarer" class="fw.DBConnectionCarer"/>
+			<interceptor-stack name="CommonStack">
+				<interceptor-ref name="DBConnectionCarer"/>
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="CommonStack"/>
+
+		<action name="" class="ec.TopPageAction" method="execute">
+			<result>/top.jsp</result>
+		</action>
+		<action name="index" class="ec.TopPageAction" method="execute">
+			<result>/top.jsp</result>
+		</action>
+	</package>
+
+	<package name="core_functions" extends="struts-default">
+		<interceptors>
+			<interceptor name="DBConnectionCarer" class="fw.DBConnectionCarer"/>
+			<interceptor-stack name="CommonStack">
+				<interceptor-ref name="DBConnectionCarer"/>
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack>
+
+			<interceptor name="orderPageFlowChecker" class="ec.OrderPageFlowChecker"/>
+			<interceptor-stack name="ecOrderPageFlowStack">
+				<interceptor-ref name="orderPageFlowChecker"/>
+				<interceptor-ref name="CommonStack"/>
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="ecOrderPageFlowStack"/>
+		<global-results>
+			<result name="back_to_cart" type="redirect">cart.html</result>
+			<result name="back_to_order_1" type="redirect">order_1.html</result>
+			<result name="back_to_order_2" type="redirect">order_2.html</result>
+		</global-results>
+
+		<action name="search" class="ec.SearchPageAction" method="execute">
+			<result>/prd_list.jsp</result>
+			<interceptor-ref name="CommonStack"/>
+		</action>
+		<action name="cart" class="ec.CartPageAction" method="execute">
+			<result name="stay">/cart.jsp</result>
+			<result name="go_to_top" type="redirect">/</result>
+			<result name="start_order" type="redirect">order_1.html</result>
+			<result name="error">/cart.jsp</result>
+			<interceptor-ref name="CommonStack"/>
+		</action>
+
+		<action name="order_1" class="ec.OrderLoginAction" method="execute">
+			<result name="display">/order_1.jsp</result>
+			<result name="success" type="redirect">/order_2_.html</result>
+			<result name="error">/order_1.jsp</result>
+		</action>
+		<action name="order_2_" class="ec.OrderCustomerAction" method="execute">
+			<result name="input">/order_2.jsp</result>
+		</action>
+		<action name="order_2" class="ec.OrderCustomerAction" method="execute">
+			<result name="input">/order_2.jsp</result>
+			<result name="go_back" type="redirect">/order_1.html</result>
+			<result name="go_next" type="redirect">/order_3_.html</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<!-- display -->
+		<action name="order_3_" class="ec.OrderDeliveryAction" method="execute">
+			<result name="input">/order_3.jsp</result>
+		</action>
+		<!-- deliv_to == "me" -->
+		<action name="order_3" class="ec.OrderDeliveryAction" method="execute">
+			<result name="input">/order_3.jsp</result>
+			<result name="go_back" type="redirect">/order_2_.html</result>
+			<result name="go_next" type="redirect">/order_4_.html</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<!-- deliv_to == "other" -->
+		<action name="order_3_o" class="ec.OrderDeliveryAction" method="execute">
+			<result name="input">/order_3.jsp</result>
+			<result name="go_back" type="redirect">/order_2_.html</result>
+			<result name="go_next" type="redirect">/order_4_.html</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<!-- display -->
+		<action name="order_4_" class="ec.OrderPaymentAction" method="execute">
+			<result name="input">/order_4.jsp</result>
+		</action>
+		<!-- payment_method : cash -->
+		<action name="order_4" class="ec.OrderPaymentAction" method="execute">
+			<result name="input">/order_4.jsp</result>
+			<result name="go_back" type="redirect">/order_3.html</result>
+			<result name="go_next" type="redirect">/order_5.html</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<!-- payment_method : quest -->
+		<action name="order_4_q" class="ec.OrderPaymentAction" method="execute">
+			<result name="input">/order_4.jsp</result>
+			<result name="go_back" type="redirect">/order_3.html</result>
+			<result name="go_next" type="redirect">/order_5.html</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="order_5" class="ec.OrderConfirmAction" method="execute">
+			<result>/order_5.jsp</result>
+		</action>
+		<action name="wait_to_complete" class="ec.NOPAction" method="execute">
+			<result>/wait_to_complete.jsp</result>
+		</action>
+		<action name="order_6" class="ec.OrderCompleteAction" method="execute">
+			<result name="success">/order_6.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	</package>
+
+	<package name="mypage" namespace="/mypage" extends="struts-default">
+		<interceptors>
+			<interceptor name="DBConnectionCarer" class="fw.DBConnectionCarer"/>
+			<interceptor-stack name="CommonStack">
+				<interceptor-ref name="DBConnectionCarer"/>
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack>
+
+			<interceptor name="loginRequired" class="ec.LoginChecker"/>
+			<interceptor-stack name="ecMyPageStack">
+				<interceptor-ref name="loginRequired"/>
+				<interceptor-ref name="CommonStack"/>
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="ecMyPageStack"/>
+		<global-results>
+			<result name="login_required" type="redirect">login.html</result>
+		</global-results>
+
+		<action name="login" class="ec.mypage.MyPageLoginAction" method="execute">
+			<result name="display">/mypage/login.jsp</result>
+			<result name="success" type="redirect">/mypage/index.html</result>
+			<result name="error">/mypage/login.jsp</result>
+			<interceptor-ref name="CommonStack"/>
+		</action>
+		<action name="index" class="ec.mypage.MyPageTopAction" method="execute">
+			<result>/mypage/index.jsp</result>
+		</action>
+		<action name="customer_edit" class="ec.mypage.MyPageCustomerEditAction" method="execute">
+			<result name="input">/mypage/customer_edit.jsp</result>
+			<result name="go_next" type="redirect">/mypage/index.html</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="password_" class="ec.mypage.MyPagePasswordChangeAction" method="execute">
+			<result name="display">/mypage/password.jsp</result>
+		</action>
+		<action name="password" class="ec.mypage.MyPagePasswordChangeAction" method="execute">
+			<result name="input">/mypage/password.jsp</result>
+			<result name="success" type="redirect">/mypage/index.html</result>
+			<result name="error">/mypage/password.jsp</result>
+		</action>
+		<action name="order_display" class="ec.mypage.MyPageOdrDisplayAction" method="execute">
+			<result>/mypage/order_display.jsp</result>
+		</action>
+		<action name="order_cancel" class="ec.mypage.MyPageOdrCancelAction" method="execute">
+			<result name="success" type="redirect">/mypage/index.html</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="inquiry_list" class="ec.mypage.MyPageInquiryListAction" method="execute">
+			<result>/mypage/inquiry_list.jsp</result>
+		</action>
+		<action name="inquiry_entry_" class="ec.mypage.MyPageInquiryEntryAction" method="execute">
+			<result name="display">/mypage/inquiry_entry.jsp</result>
+		</action>
+		<action name="inquiry_entry" class="ec.mypage.MyPageInquiryEntryAction" method="execute">
+			<result name="input">/mypage/inquiry_entry.jsp</result>
+			<result name="success" type="redirect">/mypage/inquiry_list.html</result>
+			<result name="error">/mypage/inquiry_entry.jsp</result>
+		</action>
+	</package>
+</struts>

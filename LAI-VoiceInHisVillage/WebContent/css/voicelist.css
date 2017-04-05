@@ -1,0 +1,54 @@
+.page_header {
+	width: 640px;
+	text-align: right;
+}
+
+.search_condition {
+	width: 640px;
+	padding: 12px;
+	border-bottom: solid 1px #c0c0c0
+}
+.error_message {
+	padding-top: 32px;
+	color: red;
+}
+.list_table {
+	width: 640px;
+	background: solid 1px #c0c0c0;
+}
+
+.delete_button_column {
+	width: 50px;
+}
+.user_name {
+	font-weight: bold;
+}
+.user_name:after {
+	content: "さん";
+}
+.user_attr {
+}
+.timestamp {
+	font-size: 12px;
+	color: #808080;
+}
+
+.subject {
+	font-weight: bold;
+	color: #8080ff;
+	padding-left: 80px;
+}
+
+.voice_body {
+	min-height: 80px;
+	margin-bottom: 32px;
+	padding-left: 80px;
+	padding-bottom: 8px;
+	font-size: 14px;
+	border-bottom: solid 1px #c0c0c0;
+	border-right: solid 1px #c0c0c0;
+	background: #fafaff;
+}
+.fotter_row {
+	height: 32px;
+}

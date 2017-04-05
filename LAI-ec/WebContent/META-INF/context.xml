@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Context>
+
+	<Resource name="jdbc/ecdb" auth="Container" type="javax.sql.DataSource"
+			maxActive="100" maxIdle="30" maxWait="10000"
+			username="ec" password="ecwork" driverClassName="com.mysql.jdbc.Driver"
+			url="jdbc:mysql://localhost/ec"
+			defaultAutoCommit="false" />
+		
+</Context>

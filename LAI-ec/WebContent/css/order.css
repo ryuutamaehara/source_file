@@ -1,0 +1,163 @@
+/*
+  買物カゴ・注文系ページ用
+*/
+.order_page_header {
+	width: 100%;
+	margin: 4px;
+}
+.page_title {
+	padding: 8px;
+	font-size: 16px;
+	font-weight: bold;
+}
+.page_desc {
+	padding-top: 16px;
+	padding-bottom: 16px;
+	font-size: 14px;
+}
+.order_step {
+	width: 68px;
+	padding: 8px;
+	text-align: center;
+	color: #a0a0a0;
+	font-size: 10px;
+}
+.here {
+	border: 3px solid #dfd0d0;
+	box-shadow: 2px 2px 5px 0px #333333;
+	color: #000000;
+	font-size: 12px;
+	font-weight: bold;
+	transform: rotate(358deg);
+}
+.cart_list {
+	width: 100%;
+	padding: 8px;
+	border-collapse: collapse;
+	border: 1px solid #f0f0f0;
+}
+.cart_list tr {
+	border: 1px solid #f0f0f0;
+}
+.cart_header {
+	border: 1px solid #f0f0f0;
+	background: #f0f0f0;
+}
+.cart_header th {
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+.cart_list th, td{
+	vertical-align: middle;
+}
+.cart_h_prd_name {
+	width: 320px;
+	padding-left: 126px;
+	text-align: left;
+}
+.cart_h_unit_price {
+	width: 80px;
+}
+.cart_h_quantity {
+	width: 60px;
+}
+.cart_h_line_price {
+	width: 90px;
+}
+.cart_h_del_button {
+	width: 80px;
+}
+.cart_prd_img {
+	width: 120px;
+	height: 60px;
+	font-size: 13px;
+	text-align: center;
+}
+.cart_prd_img img {
+	width: 45px;
+	height: 45px;
+}
+.cart_prd_name {
+	text-align: left;
+	vertical-align: middle;
+}
+.cart_unit_price {
+}
+.cart_quantity {
+	text-align: right;
+}
+.cart_line_price {
+}
+.cart_del_button {
+	text-align: center;
+}
+.quantity_select option {
+	text-align: right;
+}
+
+.cart_footer {
+	width: 100%;
+	padding: 8px;
+	border-collapse: collapse;
+	border: 1px solid #f0f0f0;
+	}
+.cart_footer tr {
+	height: 40px;
+	border: 1px solid #f0f0f0;
+}
+
+.cart_footer_item_label {
+	width: 120px;
+	text-align: right;
+}
+.cart_footer_item {
+	padding: 4px;
+	width: 120px;
+}
+.cart_footer_right_blank {
+	width: 76px;
+}
+.button_area {
+	margin-top: 12px;
+	width: 100%;
+	padding: 8px;
+	border-collapse: collapse;
+	border: 0px;
+}
+.button_area td {
+	text-align: center;
+}
+
+
+
+
+.order_body {
+	margin-top: 12px;
+	width: 640px;
+	padding: 8px;
+	border-collapse: collapse;
+}
+.order_body td {
+	padding: 16px;
+}
+.label_col {
+	width: 150px;
+	border: 1px solid #f0f0f0;
+	text-align: right;
+	vertical-align: top;
+}
+.input_col {
+	width: 480px;
+	border: 1px solid #f0f0f0;
+	text-align: left;
+	font-size: 13px;
+	line-height: 1.5;
+}
+.note {
+	margin-left: 12px;
+	font-size: 11px;
+	font-weight: normal;
+}
+input {
+	margin: 4px;
+}

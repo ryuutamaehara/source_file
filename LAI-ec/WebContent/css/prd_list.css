@@ -1,0 +1,25 @@
+/*
+  商品一覧表示系ページ用
+*/
+.prd_img_col {
+	width: 120px;
+	height: 60px;
+	font-size: 13px;
+	text-align: center;
+}
+.prd_img_col img {
+	width: 45px;
+	height: 45px;
+}
+.prd_name {
+	font-size: 13px;
+	font-weight: bold;
+}
+.prd_desc {
+	font-size: 12px;
+}
+.prd_price {
+	width: 120px;
+	font-size: 12px;
+	font-weight: normal;
+}

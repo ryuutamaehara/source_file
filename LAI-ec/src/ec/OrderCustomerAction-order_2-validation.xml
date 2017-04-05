@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.2//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+	<field name="customer_nm">
+		<field-validator type="requiredstring">
+			<message>お名前が入力されていません。</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">16</param>
+			<message>お名前は${maxLength}文字以内で入力してください。</message>
+		</field-validator>
+	</field>
+	<field name="address_2">
+		<field-validator type="requiredstring">
+			<message>住所：エリア名が入力されていません。</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">8</param>
+			<message>住所：エリア名は${maxLength}文字以内で入力してください。</message>
+		</field-validator>
+	</field>
+	<field name="address_3">
+		<field-validator type="requiredstring">
+			<message>住所：丁目が入力されていません。</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">5</param>
+			<message>住所：丁目は${maxLength}文字以内で入力してください。</message>
+		</field-validator>
+	</field>
+	<field name="address_4">
+		<field-validator type="requiredstring">
+			<message>住所：番地が入力されていません。</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">3</param>
+			<message>住所：番地は${maxLength}文字以内で入力してください。</message>
+		</field-validator>
+	</field>
+</validators>

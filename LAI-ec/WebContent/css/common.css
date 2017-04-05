@@ -1,0 +1,115 @@
+/*
+ 共通系CSS
+*/
+.error_message {
+	list-style-type: none;
+	text-align: left;
+	font-size: 12px;
+	color: red;
+}
+.num {
+	text-align: right;
+}
+body {
+	width: 100%;
+}
+table {
+	border: 1px solid #eee;
+}
+td {
+	text-align: left;
+	vertical-align: top;
+}
+.shop_title {
+	text-align: left;
+}
+.breadcrumbs {
+	text-align: left;
+	font-size: 12px;
+}
+.header_button_area {
+	width: 120px;
+	text-align: right;
+	padding-right: 8px;
+	font-size: 12px;
+}
+.section_title {
+	width: 100%;
+	font-size: 14px;
+	font-weight: normal;
+}
+.section_title:before{
+	content: "□"
+}
+
+.col_left {
+	width: 140px;
+	background: #eee;
+}
+.col_right {
+	width: 660px;
+}
+.cate_tree {
+	font-size: 14px;
+}
+.cate_tree_sub {
+	margin-left: 12px;
+	padding: 0px;
+}
+
+.caution {
+	font-weight: bold;
+	color: red;
+}
+.caution:before {
+	content: "【注意】";
+}
+
+.price {
+	text-align: right;
+}
+.price:after {
+	content: " VM";
+}
+.radio_list {
+	list-style-type: none;
+}
+
+
+.mypage{
+	float:left;
+}
+
+.cart{
+	float:right;
+}
+
+.default_section {
+	width: 100%;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.blink {
+	-webkit-animation: blinktext 0.8s linear 0s alternate none infinite
+	-moz-animation: blinktext 0.8s linear 0s alternate none infinite;
+	animation: blinktext 0.8s linear 0s alternate none infinite;
+}
+@-webkit-keyframes blinktext {
+	0% { opacity: 0; }
+	19.9% { opacity: 0; }
+	20% { opacity: 1; }
+	100% { opacity: 1; }
+}
+@-moz-keyframes blinktext {
+	0% { opacity: 0; }
+	19.9% { opacity: 0; }
+	20% { opacity: 1; }
+	100% { opacity: 1; }
+}
+@keyframes blinktext {
+	0% { opacity: 0; }
+	19.9% { opacity: 0; }
+	20% { opacity: 1; }
+	100% { opacity: 1; }
+}

@@ -1,0 +1,217 @@
+body{
+	border-top:10px solid #333;
+	background: #eee;
+	margin: 0;
+	padding: 0;
+	color: #323232;
+	font-family: "メイリオ", Meiryo, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+	min-width: 600px;
+}
+
+a{
+	color: #E61673;
+	text-decoration: underline;
+	overflow: hidden;
+    outline: none;
+}
+a:visited{
+	color: #E61673;
+}
+a:hover{
+	text-decoration: none;
+}
+
+h1{
+	min-height: 50px;
+	font-size: 35px;
+	font-weight: bold;
+	padding: 0 0 0 50px;
+	line-height: 1.4;
+	margin-bottom: 20px;
+}
+
+.king{
+	background: url("images/bg_h1_king.png") 0 0 no-repeat;
+}
+.human{
+	background: url("images/bg_h1_human.png") 0 0 no-repeat;
+}
+.master{
+	background: url("images/bg_h1_master.png") 0 0 no-repeat;
+}
+
+hr{
+  display:block;
+  width: 100%;
+  height: 1px;
+  border: 0;
+  border-top: 1px dashed #333;
+}
+
+.button {
+	font-family: "メイリオ", Meiryo, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+	margin-top:20px;
+	display: inline-block;
+	width: 200px;
+	height: 54px;
+	text-align: center;
+	text-decoration: none;
+	line-height: 54px;
+	outline: none;
+
+	position: relative;
+	z-index: 2;
+	background-color: #333;
+	border: 2px solid #333;
+	color: #fff;
+	line-height: 50px;
+	overflow: hidden;
+
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+.button:hover {
+	color: #333;
+	background-color: #fff;
+}
+
+
+
+.button_sub {
+	font-family: "メイリオ", Meiryo, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+	display: inline-block;
+	height: 25px;
+	text-align: center;
+	text-decoration: none;
+	line-height: 20px;
+	outline: none;
+	margin-top:5px;
+
+	position: relative;
+	z-index: 2;
+	background-color: #333;
+	border: 2px solid #333;
+	color: #fff;
+	line-height: 20px;
+	overflow: hidden;
+
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+.button_sub:hover {
+	color: #333;
+	background-color: #fff;
+}
+/* added by T begin */
+.button_sub:disabled {
+	color: #fff;
+	background-color: #aaa;
+	border: 2px solid #aaa;
+}
+/* added by T end */
+
+.breadcrumbs {
+	text-align: left;
+	font-size: 12px;
+	background-color:#ddd;
+}
+
+.order_page_header {
+	width: 100%;
+	margin: 4px;
+	border: 0;
+	border-bottom: 1px double #333;
+}
+
+.col_left {
+	border-right: 1px dashed #333;
+	padding-right:5px;
+}
+
+.section_title {
+	width: 100%;
+	font-size: 14px;
+	font-weight: normal;
+	color:#fff;
+	background-color: #666;
+}
+
+.news_title {
+	font-size: 13px;
+	font-weight: bold;
+	color: #E61673;
+}
+
+.rec_product_name {
+	font-size: 13px;
+	font-weight: bold;
+	color: #E61673;
+}
+
+.cart_header th {
+	padding-top: 6px;
+	padding-bottom: 6px;
+	color:#fff;
+	background-color: #666;
+	border-right: 1px dashed #fff;
+}
+
+.mypage{
+	width:50px;
+	height:50px;
+	background: url(./images/mypage.png) no-repeat left top;
+	overflow: hidden;
+  	text-indent: 100%;
+  	white-space: nowrap;
+	float:left;
+	margin-left:10px
+}
+
+.mypage:hover{
+	opacity:0.7;
+	filter: alpha(opacity=70);
+	-ms-filter: "alpha( opacity=70 )";
+}
+
+.cart{
+	width:50px;
+	height:50px;
+	background: url(./images/cart.png) no-repeat left top;
+	overflow: hidden;
+  	text-indent: 100%;
+  	white-space: nowrap;
+	float:right;
+
+}
+
+.cart:hover{
+	opacity:0.7;
+	filter: alpha(opacity=70);
+	-ms-filter: "alpha( opacity=70 )";
+}
+
+.label_col{
+	background-color:#666;
+	color:#fff;
+	padding-right: 5px;
+}
+
+.button_area{
+	width:100%;
+	text-align:center;
+}
+
+.login_button_col{
+	width:100%;
+	text-align:center;
+}
+
+.cond_item_label_col{
+	background-color:#666;
+	color:#fff;
+}
+
+.list_area th{
+	background-color:#666;
+	color:#fff;
+}

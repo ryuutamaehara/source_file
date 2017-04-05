@@ -1,0 +1,12 @@
+// ポイント付与機能追加：BEGIN
+// ポイント付与機能追加：END
+
+daoクラスの修正
+	新規項目追加に関する修正
+	- フィールド、setter / getterの追加
+	- toString、_select、fetch、insertへの項目追加
+		TOdrHeader
+		TOdrDetail
+
+dataパッケージ
+	CartInfo#recalculate(..)
